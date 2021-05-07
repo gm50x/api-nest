@@ -47,8 +47,7 @@ jobs:
     - name: 'Log Stuff'
       run: |
         ls
-        cd dist
-        ls
+        echo 'Hello World'
 
     # - name: Download artifact from build job
     #   uses: actions/download-artifact@v2
