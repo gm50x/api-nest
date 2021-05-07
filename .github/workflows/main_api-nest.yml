@@ -26,6 +26,11 @@ jobs:
           npm install
           npm run build:prod
 
+      - name: 'Log Stuff'
+        run: |
+          echo '-----Log on BUILD: -----'
+          ls
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
@@ -47,7 +52,7 @@ jobs:
 
       - name: 'Log Stuff'
         run: |
-          echo '-----Hello World-----'
+          echo '-----Log on deploy-----'
           ls
 
       # - name: 'Deploy to Azure Web App'
