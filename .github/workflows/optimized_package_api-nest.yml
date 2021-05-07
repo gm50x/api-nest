@@ -7,6 +7,10 @@ on:
   push:
     branches:
       - main
+    paths:
+      - src
+      - .github/workflows/optimized_package_api-nest.yml
+
   workflow_dispatch:
 
 jobs:
