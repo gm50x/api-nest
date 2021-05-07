@@ -31,11 +31,6 @@ jobs:
           rm node_modules -rf
           npm install --only=production
 
-      - name: 'Log Stuff'
-        run: |
-          echo '-----Log on BUILD: -----'
-          ls
-
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
@@ -44,7 +39,6 @@ jobs:
             package*.json
             dist
             node_modules
-
 
   deploy:
     runs-on: ubuntu-latest
@@ -63,12 +57,14 @@ jobs:
         run: |
           echo '-----Log on Deploy: -----'
           ls
+          ls node_modules
+          ls dist
 
-      - name: 'Deploy to Azure Web App'
-        id: deploy-to-webapp
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: 'api-nest'
-          slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_ca9dbd88825742f28169399956958098 }}
-          package: .
+      # - name: 'Deploy to Azure Web App'
+      #   id: deploy-to-webapp
+      #   uses: azure/webapps-deploy@v2
+      #   with:
+      #     app-name: 'api-nest'
+      #     slot-name: 'production'
+      #     publish-profile: ${{ secrets.AzureAppService_PublishProfile_ca9dbd88825742f28169399956958098 }}
+      #     package: .
