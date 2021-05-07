@@ -33,8 +33,8 @@ jobs:
         with:
           name: node-app
           path: |
-            package*.json
-            dist
+            .
+            !node_modules
 
   deploy:
     runs-on: ubuntu-latest
