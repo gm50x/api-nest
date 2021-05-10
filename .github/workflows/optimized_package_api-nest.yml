@@ -43,8 +43,8 @@ jobs:
         with:
           name: node-app
           path: |
-            package*.json
-            dist
+            projeto/package*.json
+            projeto/dist
 
   deploy:
     runs-on: ubuntu-latest
