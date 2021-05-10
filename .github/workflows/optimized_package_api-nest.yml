@@ -8,7 +8,7 @@ on:
     branches:
       - main
     paths:
-      - src
+      - project/src
       - .github/workflows/optimized_package_api-nest.yml
 
   workflow_dispatch:
